@@ -4,7 +4,7 @@ import Button from "./components/Button";
 function App() {
   return (
     <div className="App">
-      <Button>Hello</Button>
+      <Button color="primary">Hello</Button>
     </div>
   );
 }
