@@ -1,0 +1,101 @@
+@import "../../styles/variables/index.scss";
+
+.container {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-color: red;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  &[data-corners="0"] {
+    border-radius: $corners-0;
+  }
+  &[data-corners="1"] {
+    border-radius: $corners-1;
+  }
+  &[data-corners="2"] {
+    border-radius: $corners-2;
+  }
+  &[data-corners="3"] {
+    border-radius: $corners-3;
+  }
+  &[data-corners="4"] {
+    border-radius: $corners-4;
+  }
+  &[data-corners="5"] {
+    border-radius: $corners-5;
+  }
+  &[data-corners="6"] {
+    border-radius: $corners-6;
+  }
+  &[data-corners="7"] {
+    border-radius: $corners-7;
+  }
+  &[data-corners="8"] {
+    border-radius: $corners-8;
+  }
+  &[data-corners="9"] {
+    border-radius: $corners-9;
+  }
+  &[data-corners="10"] {
+    border-radius: $corners-10;
+  }
+  &[data-corners="rounded"] {
+    border-radius: $corners-rounded;
+  }
+
+  &[data-elevation="0"] {
+    box-shadow: $elevation-0;
+  }
+  &[data-elevation="1"] {
+    box-shadow: $elevation-1;
+  }
+  &[data-elevation="2"] {
+    box-shadow: $elevation-2;
+  }
+  &[data-elevation="3"] {
+    box-shadow: $elevation-3;
+  }
+  &[data-elevation="4"] {
+    box-shadow: $elevation-4;
+  }
+  &[data-elevation="5"] {
+    box-shadow: $elevation-5;
+  }
+  &[data-elevation="6"] {
+    box-shadow: $elevation-6;
+  }
+  &[data-elevation="7"] {
+    box-shadow: $elevation-7;
+  }
+  &[data-elevation="8"] {
+    box-shadow: $elevation-8;
+  }
+  &[data-elevation="9"] {
+    box-shadow: $elevation-9;
+  }
+  &[data-elevation="10"] {
+    box-shadow: $elevation-10;
+  }
+
+  &[data-size="small"] {
+    font-size: 0.8em;
+  }
+
+  &[data-size="medium"] {
+    font-size: 1em;
+  }
+  &[data-size="large"] {
+    font-size: 1.3em;
+  }
+
+  &[data-color="primary"] {
+    background-color: $color-primary;
+    color: $color-primary-alt;
+  }
+}
