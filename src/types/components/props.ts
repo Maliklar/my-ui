@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, InputHTMLAttributes } from "react";
 import { IconType } from "react-icons";
 
 export type BoxProps = {
@@ -16,4 +16,13 @@ export type ButtonProps = BoxProps &
     startIcon?: IconType;
     endIcon?: IconType;
     size?: "small" | "medium" | "Large";
+  };
+
+export type TextFieldProps = BoxProps &
+  InputHTMLAttributes<HTMLInputElement> & {
+    type?: "text" | "number" | "password" | "email";
+    icon?: IconType;
+    title?: string;
+    error?: boolean;
+    errorMessage?: string;
   };
