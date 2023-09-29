@@ -1,5 +1,122 @@
 @import "../../styles/components/box.module.scss";
 
 .container {
-  @extend .box;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  .label {
+    margin-inline-start: 0.3em;
+  }
+
+  .inputContainer {
+    @extend .box;
+    overflow: visible;
+    outline: none;
+    padding: 1em;
+    gap: 0.5rem;
+
+    &[data-variant="outlined"] {
+      @extend .textFieldOutlined;
+    }
+
+    &[data-variant="filled"] {
+      @extend .textFieldFilled;
+    }
+
+    &[data-variant="standard"] {
+      @extend .textFieldStandard;
+    }
+
+    .hideButton {
+      cursor: pointer;
+    }
+    .input {
+      background-color: transparent;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      flex: 1;
+    }
+    svg {
+      color: $color-background-tertiary;
+      opacity: 0.5;
+    }
+  }
+  .error {
+    margin-inline-start: 0.3em;
+    color: $color-error;
+  }
+}
+
+.textFieldOutlined {
+  background-color: transparent;
+  outline: 1px solid $color-background-tertiary;
+  transition: outline 0.5s;
+  &[data-focus="true"] {
+    outline: 1px solid $color-primary;
+  }
+}
+
+.textFieldStandard {
+  background-color: transparent;
+  @extend .bottomStripe;
+}
+
+.textFieldFilled {
+  background-color: rgba(231, 231, 231, 0.3);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  @extend .bottomStripe;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: rgba(231, 231, 231, 0.5);
+  }
+}
+
+.bottomStripe {
+  &[data-focus="true"] {
+    &::after {
+      transform: scale(1, 1);
+    }
+  }
+  &[data-focus="false"] {
+    &::after {
+      transform: scale(0, 1);
+    }
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: $color-primary;
+    transform: scale(0, 1);
+    transition: transform 0.3s;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    opacity: 0.5;
+    background-color: $color-background-tertiary;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
 }

@@ -1,13 +1,26 @@
-$color-primary: blue;
-$color-primary-alt: white;
-$color-secondary: purple;
-$color-secondary-alt: white;
+@import "./all-colors.scss";
 
-$color-success: purple;
-$color-success-alt: white;
+$color-primary: #90caf9;
+$color-primary-tertiary: #fff;
 
-$color-warning: yellow;
-$color-warning-alt: black;
-$color-error: red;
-$color-error-alt: white;
-$color-shadow: black;
+$color-secondary: #ce93d8;
+$color-secondary-tertiary: #fff;
+
+$color-success: #66bb6a;
+$color-success-tertiary: #fff;
+
+$color-warning: #ffa726;
+$color-warning-tertiary: #fff;
+
+$color-error: #f44336;
+$color-error-tertiary: #fff;
+
+$color-info: #29b6f6;
+$color-info-tertiary: #fff;
+
+$color-background: #fff;
+$color-background-tertiary: #000;
+
+$color-text: #000;
+
+$color-shadow: #000;

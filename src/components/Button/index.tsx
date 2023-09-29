@@ -14,6 +14,7 @@ export default function Button({
   corners = 2,
   loading = false,
   loadingPosition = "top",
+  variant = "text",
   ...props
 }: Props) {
   return (
@@ -23,6 +24,7 @@ export default function Button({
       data-color={color}
       data-size={size}
       data-corners={corners}
+      data-variant={variant}
       data-loading={loading}
       data-loading-position={loadingPosition}
       {...props}
