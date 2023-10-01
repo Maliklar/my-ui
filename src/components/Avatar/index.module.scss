@@ -18,10 +18,12 @@
   @extend .box;
   overflow: visible;
   align-items: start;
-  justify-content: end;
+  justify-content: start;
   border-radius: 100%;
   padding: 0.2rem;
   .badge {
+    @extend .box;
+    padding: 0;
     position: absolute;
     margin-inline-start: auto;
     border-radius: 100%;

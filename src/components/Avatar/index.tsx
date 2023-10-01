@@ -40,7 +40,7 @@ function getStylesObject(size: number | string, badge?: string) {
   if (typeof size === "number") {
     return [
       {
-        height: size + "",
+        height: size,
         width: size,
         minHeight: size,
         minWidth: size,
@@ -48,15 +48,15 @@ function getStylesObject(size: number | string, badge?: string) {
         maxWidth: size,
       },
       {
-        height: size / 20,
-        width: size / 20,
-        minHeight: size / 20,
-        minWidth: size / 20,
-        maxHeight: size / 20,
-        maxWidth: size / 20,
+        height: size / 5,
+        width: size / 5,
+        minHeight: size / 5,
+        minWidth: size / 5,
+        maxHeight: size / 5,
+        maxWidth: size / 5,
         backgroundColor: badge,
       },
     ];
   }
-  return [{}, {}];
+  return [{}, { backgroundColor: badge }];
 }

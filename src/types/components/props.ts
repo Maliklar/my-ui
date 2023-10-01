@@ -4,8 +4,16 @@ import {
   InputHTMLAttributes,
 } from "react";
 import { IconType } from "react-icons";
+import AllColors from "../../types/styles/colors";
 
-type Color = "primary" | "secondary" | "success" | "error" | "warning" | "none";
+type Color =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "error"
+  | "warning"
+  | "none"
+  | AllColors;
 type Size = "x-small" | "small" | "medium" | "large" | "x-large" | number;
 type Corners = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | "rounded";
 type Elevation = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10;
@@ -47,6 +55,6 @@ export type AvatarProps = Omit<BoxProps, "variant"> &
     alt: string;
     size?: Size;
     border?: number;
-    badge?: Color | string;
+    badge?: Color;
     color?: Color;
   };

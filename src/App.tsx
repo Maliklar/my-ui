@@ -3,6 +3,7 @@ import Avatar from "./components/Avatar";
 import Button from "./components/Button";
 import TextField from "./components/TextField";
 import { FaAccusoft } from "react-icons/fa";
+import Color from "./types/styles/colors";
 function App() {
   return (
     <div
@@ -27,7 +28,7 @@ function App() {
       <Avatar
         src="https://www.wilsoncenter.org/sites/default/files/media/images/person/james-person-1.jpg"
         alt="lskdfj"
-        badge="red"
+        badge={Color.LightGreen500}
       />
     </div>
   );
