@@ -1,0 +1,40 @@
+@import "../../styles/components/box.module.scss";
+
+@mixin setSize($height, $width) {
+  min-width: $width;
+  max-width: $width;
+  width: $width;
+  min-height: $height;
+  max-height: $height;
+  height: $height;
+}
+.container {
+  @extend .box;
+  border-radius: 100%;
+  &[data-size="x-small"] {
+    @include setSize(2rem, 2rem);
+  }
+  &[data-size="small"] {
+    @include setSize(3rem, 3rem);
+  }
+  &[data-size="medium"] {
+    @include setSize(4rem, 4rem);
+  }
+  &[data-size="large"] {
+    @include setSize(6rem, 6rem);
+  }
+  &[data-size="x-large"] {
+    @include setSize(10rem, 10rem);
+  }
+
+  .img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
