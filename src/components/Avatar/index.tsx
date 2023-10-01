@@ -1,17 +1,8 @@
 import clsx from "clsx";
-import { ButtonProps } from "../../types/components/props";
+import { AvatarProps, ButtonProps } from "../../types/components/props";
 import styles from "./index.module.scss";
 import { HTMLAttributes } from "react";
 
-type Props = {
-  src: string;
-  alt: string;
-  size?: "x-small" | "small" | "medium" | "large" | "x-large" | number;
-  border?: number;
-  color?: string;
-  badge?: boolean;
-  elevation?: number;
-} & HTMLAttributes<HTMLDivElement>;
 export default function Avatar({
   src,
   alt,
@@ -23,8 +14,8 @@ export default function Avatar({
   elevation,
   style,
   ...props
-}: Props) {
-  const [containerStyles, badgeStyles] = getStylesObject(size);
+}: AvatarProps) {
+  const [containerStyles, badgeStyles] = getStylesObject(size, badge);
   return (
     <div
       className={clsx(className, styles.container)}
@@ -38,12 +29,14 @@ export default function Avatar({
       }}
     >
       <img className={styles.img} src={src} alt={alt} />
-      {badge && <div className={styles.badge} style={badgeStyles} />}
+      {badge ? (
+        <div className={styles.badge} style={badgeStyles} data-color={badge} />
+      ) : null}
     </div>
   );
 }
 
-function getStylesObject(size: number | string) {
+function getStylesObject(size: number | string, badge?: string) {
   if (typeof size === "number") {
     return [
       {
@@ -61,6 +54,7 @@ function getStylesObject(size: number | string) {
         minWidth: size / 20,
         maxHeight: size / 20,
         maxWidth: size / 20,
+        backgroundColor: badge,
       },
     ];
   }

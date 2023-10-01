@@ -27,6 +27,7 @@ function App() {
       <Avatar
         src="https://www.wilsoncenter.org/sites/default/files/media/images/person/james-person-1.jpg"
         alt="lskdfj"
+        badge="red"
       />
     </div>
   );
