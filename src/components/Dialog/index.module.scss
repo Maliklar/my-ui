@@ -1,0 +1,83 @@
+@import "../../styles/components/box.module.scss";
+
+.overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100dvw;
+  height: 100dvh;
+
+  padding: 0.2rem;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  &[data-open="true"] {
+    display: flex;
+    animation: openAnimation forwards 0.3s;
+    .container {
+      animation: appearTop forwards 0.3s;
+    }
+  }
+  &[data-open="false"] {
+    animation: closeAnimation forwards 0.3s;
+    .container {
+      animation: hideTop forwards 0.3s;
+    }
+  }
+
+  .container {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    margin-inline: auto;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: red;
+  }
+}
+
+@keyframes openAnimation {
+  to {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+  }
+}
+
+@keyframes closeAnimation {
+  0% {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+  }
+  95% {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes appearTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hideTop {
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
