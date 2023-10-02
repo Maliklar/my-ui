@@ -6,6 +6,7 @@ import { FaAccusoft } from "react-icons/fa";
 import Color from "./types/styles/colors";
 import Dialog from "./components/Dialog";
 import { useState } from "react";
+import Alert from "./components/Alert";
 function App() {
   const [open, setOpen] = useState(false);
   return (
@@ -35,6 +36,8 @@ function App() {
         alt="lskdfj"
         badge={Color.LightGreen500}
       />
+
+      <Alert />
 
       <Dialog open={open} onClose={() => setOpen(false)} />
     </div>
