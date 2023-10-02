@@ -11,7 +11,7 @@ type Props = {
 } & BoxProps &
   HTMLAttributes<HTMLDialogElement>;
 export default function Dialog({
-  size = "medium",
+  size = "small",
   color,
   className,
   onClose,
@@ -21,18 +21,20 @@ export default function Dialog({
   unmountOnExit = false,
   ...props
 }: Props) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "unset";
-    if (unmountOnExit && !open) {
-      setTimeout(() => {
-        setIsOpen(false);
-      }, 500);
-    }
-    if (unmountOnExit && open) {
-      setTimeout(() => {
-        setIsOpen(true);
-      }, 500);
+    if (unmountOnExit) {
+      if (open)
+        setTimeout(() => {
+          setIsOpen(true);
+        }, 500);
+      else
+        setTimeout(() => {
+          setIsOpen(false);
+        }, 500);
+    } else {
+      setIsOpen(true);
     }
   }, [open, unmountOnExit]);
 

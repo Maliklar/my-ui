@@ -2,20 +2,18 @@
 
 .overlay {
   position: fixed;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100dvw;
   height: 100dvh;
-
-  padding: 0.2rem;
   background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
+
   &[data-open="true"] {
     display: flex;
     animation: openAnimation forwards 0.3s;
@@ -31,15 +29,33 @@
   }
 
   .container {
+    @extend .box;
     border: none;
     box-shadow: none;
     padding: 0;
     margin: 0;
     margin-inline: auto;
     position: relative;
-    height: 300px;
-    width: 300px;
-    background-color: red;
+    background-color: $color-background;
+    margin: 0;
+    &[data-size="small"]{
+      width: 300px;
+      height: 400px;
+    }
+    &[data-size="medium"]{
+      width: 400px;
+      height: 400px;
+    }
+    &[data-size="large"]{
+      width: 800px;
+      height: 400px;
+    }
+    &[data-size="fullscreen"]{
+      width: 100dvw;
+      height: 100dvh;
+      border-radius: 0px;
+    }
+
   }
 }
 
@@ -52,6 +68,7 @@
 
 @keyframes closeAnimation {
   0% {
+    display: flex;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
   }
