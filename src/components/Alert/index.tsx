@@ -2,18 +2,23 @@ import clsx from "clsx";
 import { HTMLAttributes } from "react";
 import { BoxProps } from "../../types/components/props";
 import styles from "./index.module.scss";
+import { IconType } from "react-icons";
 
-type Props = BoxProps & HTMLAttributes<HTMLDivElement>;
+type Props = Omit<BoxProps, "variant"> &
+  HTMLAttributes<HTMLDivElement> & {
+    variant?: "outlined" | "filled" | "standard";
+    icon?: IconType;
+  };
 export default function Alert({
   children,
   className,
   elevation = 1,
-  color = "warning",
-
+  color = "success",
   corners = 2,
   loading = false,
   loadingPosition = "top",
-  variant = "contained",
+  variant = "filled",
+  icon: Icon,
   ...props
 }: Props) {
   return (
@@ -26,7 +31,8 @@ export default function Alert({
       className={clsx(className, styles.container)}
       {...props}
     >
-      asdf
+      {Icon && <Icon />}
+      {children}
     </div>
   );
 }

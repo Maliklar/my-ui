@@ -3,7 +3,7 @@
 .container {
   @extend .box;
   position: fixed;
-
+  gap: 1rem;
   bottom: 0;
   left: 0;
   max-width: 500px;
@@ -11,8 +11,7 @@
   margin: 1rem;
   padding: 1rem;
 
-
-  &[data-variant="outlined"]{
+  &[data-variant="outlined"] {
     background-color: $color-background;
     &[data-color="primary"] {
       outline: 1px solid $color-primary;
@@ -36,7 +35,34 @@
     }
   }
 
-  &[data-variant="contained"]{
+  &[data-variant="filled"] {
+    &[data-color="primary"] {
+      background-color: $color-primary;
+      color: $color-primary-tertiary;
+    }
+    &[data-color="secondary"] {
+      background-color: $color-secondary;
+      color: $color-secondary-tertiary;
+    }
+    &[data-color="success"] {
+      background-color: $color-success;
+      color: $color-success-tertiary;
+    }
+    &[data-color="info"] {
+      background-color: $color-info;
+      color: $color-info-tertiary;
+    }
+    &[data-color="warning"] {
+      background-color: $color-warning;
+      color: $color-warning-tertiary;
+    }
+    &[data-color="error"] {
+      background-color: $color-error;
+      color: $color-error-tertiary;
+    }
+  }
+
+  &[data-variant="standard"] {
     &[data-color="primary"] {
       background-color: $color-primary;
       color: $color-primary-tertiary;
