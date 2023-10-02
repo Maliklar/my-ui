@@ -127,30 +127,7 @@
     font-size: 1.3em;
   }
 
-  &[data-color="primary"] {
-    background-color: $color-primary;
-    color: $color-primary-tertiary;
-  }
-  &[data-color="secondary"] {
-    background-color: $color-secondary;
-    color: $color-secondary-tertiary;
-  }
-  &[data-color="success"] {
-    background-color: $color-success;
-    color: $color-success-tertiary;
-  }
-  &[data-color="info"] {
-    background-color: $color-info;
-    color: $color-info-tertiary;
-  }
-  &[data-color="warning"] {
-    background-color: $color-warning;
-    color: $color-warning-tertiary;
-  }
-  &[data-color="error"] {
-    background-color: $color-error;
-    color: $color-error-tertiary;
-  }
+  
 
   &:disabled {
     pointer-events: none;
@@ -201,5 +178,32 @@
   &[data-color="error"] {
     outline: 1px solid $color-error;
     color: $color-error;
+  }
+}
+
+.nameItLaterIMPORTANT{
+  &[data-color="primary"] {
+    background-color: $color-primary;
+    color: $color-primary-tertiary;
+  }
+  &[data-color="secondary"] {
+    background-color: $color-secondary;
+    color: $color-secondary-tertiary;
+  }
+  &[data-color="success"] {
+    background-color: $color-success;
+    color: $color-success-tertiary;
+  }
+  &[data-color="info"] {
+    background-color: $color-info;
+    color: $color-info-tertiary;
+  }
+  &[data-color="warning"] {
+    background-color: $color-warning;
+    color: $color-warning-tertiary;
+  }
+  &[data-color="error"] {
+    background-color: $color-error;
+    color: $color-error-tertiary;
   }
 }

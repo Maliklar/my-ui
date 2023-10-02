@@ -13,7 +13,7 @@ export default function Alert({
   corners = 2,
   loading = false,
   loadingPosition = "top",
-  variant = "outlined",
+  variant = "contained",
   ...props
 }: Props) {
   return (
