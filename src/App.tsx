@@ -31,17 +31,17 @@ function App() {
       />
 
       <Avatar
-        onClick={() => setOpen(true)}
+        onClick={() => setOpen((i) => !i)}
         src="https://www.wilsoncenter.org/sites/default/files/media/images/person/james-person-1.jpg"
         alt="lskdfj"
         badge={Color.LightGreen500}
       />
 
-      <Alert icon={FaExclamationTriangle}>
+      <Alert icon={FaExclamationTriangle} open={open}>
         Hello There this is an Alert component hopfully I can flow it up
       </Alert>
 
-      <Dialog open={open} onClose={() => setOpen(false)} />
+      {/* <Dialog open={open} onClose={() => setOpen(false)} /> */}
     </div>
   );
 }

@@ -1,0 +1,104 @@
+// appearance
+@keyframes appearLeft {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes disappearLeft {
+  0% {
+    visibility: visible;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes appearRight {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes disappearRight {
+  0% {
+    visibility: visible;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes appearTop {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes disappearTop {
+  0% {
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  95% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes appearBottom {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes disappearBottom {
+  0% {
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  95% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
